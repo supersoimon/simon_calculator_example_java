@@ -1,4 +1,3 @@
-// package simon_calculator_example_java;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -14,7 +13,7 @@ public class Calculator {
                 String inputLine = scanner.nextLine().trim();
                 operation = inputLine.charAt(0);
                 num1 = Double.parseDouble(inputLine.substring(inputLine.indexOf(" "), inputLine.lastIndexOf(" ")));
-                num2 = Double.parseDouble(inputLine.substring(inputLine.indexOf(" "), inputLine.lastIndexOf(" ")));
+                num2 = Double.parseDouble(inputLine.substring(inputLine.lastIndexOf(" ")));
                 System.out.printf("num1=%.2f, num2=%.2f, operation=%s\n", num1, num2, operation);
             switch(operation) {
                 case '+':
