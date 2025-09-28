@@ -1,4 +1,4 @@
-package simon_calculator_example_java;
+// package simon_calculator_example_java;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,7 +7,7 @@ public class Calculator {
         double num1, num2;
         char operation;
         Scanner scanner;
-        Operation equation;
+        Operation equation = null;
         try {
             scanner = new Scanner(new File("input.txt"));
             while (scanner.hasNextLine()) {
@@ -21,28 +21,12 @@ public class Calculator {
                     //do addition
                     equation = new Addition(num1, num2);
                 break;
-                case '-':
-                    //do subtraction
-                    equation = new Subtration(num1, num2);
-                break;
-                case '*':
-                    //do multiplication
-                    equation = new Multiplication(num1, num2);
-                break;
-                case '/':
-                    //do division
-                    if (num2 == 0) {
-                        System.err.println("Division by zero!");
-                        break;
-                    }
-                    else {
-                        equation = new Division(num1, num2);
-                    }
-                break;
                 default:
                     System.err.println("Invalid operation!");
             }
-            System.out.println("the result is " + equation.result());
+            if (equation != null); {
+                System.out.println("the result is " + equation.result());
+            }
             }
         } catch (FileNotFoundException e) {
             System.err.println("File not found!");
@@ -50,4 +34,5 @@ public class Calculator {
         
 
     }
+    
 }
