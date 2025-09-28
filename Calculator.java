@@ -6,10 +6,10 @@ public class Calculator {
         double num1, num2;
         char operation;
         Scanner scanner;
-        Operation equation = null;
         try {
             scanner = new Scanner(new File("input.txt"));
             while (scanner.hasNextLine()) {
+                Operation equation = null;
                 String inputLine = scanner.nextLine().trim();
                 operation = inputLine.charAt(0);
                 num1 = Double.parseDouble(inputLine.substring(inputLine.indexOf(" "), inputLine.lastIndexOf(" ")));
